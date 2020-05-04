@@ -125,3 +125,96 @@ Node(6)
 >>> list
 [Node(5), Node(4), Node(3), Node(2), Node(1)]
 ```
+## Functions for AVL tree
+* create a avl tree
+```
+>>> values = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+>>> tree_root = create_bbst(values,0,len(values)-1)
+```
+* add a Node
+```
+
+>>> print(tree_root)
+
+        ______8________
+       /               \
+    __4__           ____12___
+   /     \         /         \
+  2       6       10         _14
+ / \     / \     /  \       /   \
+1   3   5   7   9    11    13    15
+
+>>> add_avl(tree_root,7.2)
+>>> print(tree_root)
+
+        ______8________
+       /               \
+    __4__           ____12___
+   /     \         /         \
+  2       6       10         _14
+ / \     / \     /  \       /   \
+1   3   5   7   9    11    13    15
+             \
+             7.2
+
+>>> add_avl(tree_root,7.4)
+>>> print(tree_root)
+
+        ______________8________
+       /                       \
+    __4__                   ____12___
+   /     \                 /         \
+  2       6___            10         _14
+ / \     /    \          /  \       /   \
+1   3   5     7.2_      9    11    13    15
+             /    \
+            7     7.4
+            
+# see the subtree rotated
+```
+* delete a Node
+```
+>>> delete_avl(tree_root,12)
+>>> print(tree_root)
+
+>>> print(tree_root)
+
+        ______________8_____
+       /                    \
+    __4__                   _11___
+   /     \                 /      \
+  2       6___            10      _14
+ / \     /    \          /       /   \
+1   3   5     7.2_      9       13    15
+             /    \
+            7     7.4
+```
+* search a Node
+```
+>>> search(tree_root,9)
+Node(9)
+```
+* check whether a tree is a avl tree
+```
+>>> is_avl(tree_root)
+True
+```
+* find rank and rank of a Node
+```
+>>> print(tree_root)
+
+        ______________8_____
+       /                    \
+    __4__                   _11___
+   /     \                 /      \
+  2       6___            10      _14
+ / \     /    \          /       /   \
+1   3   5     7.2_      9       13    15
+             /    \
+            7     7.4
+
+>>> rank(tree_root,10)
+5
+>>> find_rank(tree_root,5)
+Node(10)
+```
