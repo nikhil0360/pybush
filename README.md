@@ -27,7 +27,7 @@ example: a level order bst [7,3,11,1,5,9,13,0,2,4,6,8,10,12,14] will look like t
 ```
 binarytree do have a lot of functionalities, but pybush extends it...
 
-## Getting started 
+## Getting started
 ```
 $ pip3 install binarytree
 $ pip3 install pybush
@@ -45,7 +45,7 @@ class Node(Node):
         self.count = 1
 ```
 ## Funtions for BBST (Balance binary search tree)
-* create a bbst 
+* create a bbst
 ```
 >>> values = [1,2,3,4,5,6,7,8]
 >>> tree_root = create_bbst(values,0,len(values)-1)
@@ -57,7 +57,7 @@ class Node(Node):
  / \     / \
 1   3   5   7
              \
-              8              
+              8
 ```
 * add a Node
 ```
@@ -101,7 +101,7 @@ Node(5)
 Node(5)
 ```
 
-* least common ancestor 
+* least common ancestor
 ```
 >>> lca(tree_root,5,8)
 Node(6)
@@ -169,7 +169,7 @@ Node(6)
 1   3   5     7.2_      9    11    13    15
              /    \
             7     7.4
-            
+
 # see the subtree rotated
 ```
 * delete a Node

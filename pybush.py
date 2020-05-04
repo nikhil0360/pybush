@@ -37,10 +37,10 @@ def check_height(pointer):
 # Check whether the node follows avl property
 def avl(pointer):
     if abs(check_height(pointer.left) - check_height(pointer.right)) < 2:
-        print("AVL OKAY")
+        #print("AVL OKAY")
         return True
     else:
-        print("AVL VIOLATED")
+        #print("AVL VIOLATED")
         return False
 
 
@@ -265,35 +265,35 @@ def add_avl(pointer, x):
             pointer.left = Node(x)
             pointer.left.parent = pointer
 
-    print("NODE ADDED")
+    #print("NODE ADDED")
     temp = pointer
 
     flag = True
     while flag:
         h = check_height(temp)
-        print(h, temp.h)
+        #print(h, temp.h)
 
         if h > temp.h:
             temp.h = h
 
             if not avl(temp):
                 rotate(temp)
-                print("ROTATED")
+                #print("ROTATED")
                 flag = False
 
             elif temp.parent:
-                print("MOVING UP")
+                #print("MOVING UP")
                 temp = temp.parent
 
             else:
-                print("NO VIOLATION OF AVL TILL ROOT")
+                #print("NO VIOLATION OF AVL TILL ROOT")
                 flag = False
 
         else:
-            print("NO CHANGE IN HEIGHT")
+            #print("NO CHANGE IN HEIGHT")
             flag = False
 
-    print("END OF WHILE")
+    #print("END OF WHILE")
 
 
 # given a tree, it will change node.h to it's actual height
@@ -549,12 +549,14 @@ def add(pointer, x):
             return add(pointer.right, x)
         else:
             pointer.right = Node(x)
+            pointer.right.parent = pointer
             return pointer.right
     elif pointer.value > x:
         if pointer.left is not None:
             return add(pointer.left, x)
         else:
             pointer.left = Node(x)
+            pointer.left.parent = pointer
             return pointer.left
 
 
@@ -589,7 +591,7 @@ def delete_node(root, pointer):
 
     if root == pointer:
         child.parent = None
-        return child
+        root[0] = child
 
     if child:
         child.parent = p
@@ -597,12 +599,11 @@ def delete_node(root, pointer):
     if p:
         if p.left == pointer:
             p.left = child
-            return root
+
         else:
             p.right = child
-            return root
 
-    del pointer
+
 
 
 # given a tree, assign parents to each nodes
