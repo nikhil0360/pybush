@@ -1,5 +1,5 @@
 {
-"version" = "1.1.0",
-"dependency" = "binarytee",
-"pythonv" = "3+"
+"version" : "1.1.0",
+"dependency" : "binarytee",
+"pythonv" : "3+"
 }
